@@ -1,0 +1,7 @@
+*.sh
+*.log
+node_modules
+.env
+*.swp
+.DS_Store
+build
