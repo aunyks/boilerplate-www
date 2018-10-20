@@ -20,8 +20,6 @@ type Props = {
 const defaultRoutes = [
   { label: 'Home', path: '/', button: false },
   { label: 'About', path: '/about', button: false },
-  { label: 'Catalog', path: '/catalog', button: false },
-  { label: 'Shopping Cart', path: '/cart', button: false },
   { label: 'Checkout', path: '/cart', button: true }
 ];
 
