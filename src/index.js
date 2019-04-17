@@ -8,8 +8,19 @@ import Web3Store from 'stores/Web3Store';
 import Home from 'views/Home';
 import About from 'views/About';
 import Page404 from 'views/404';
+import 'sw.js';
 import 'index.scss';
 //import 'assets/favicon.ico';
+window.addEventListener('load', async () => {
+  if ('serviceWorker' in navigator) {
+    try {
+      await navigator.serviceWorker.register('./sw.js');
+      console.log('SW registration succeeded')
+    } catch (e) {
+      console.log(`SW registration failed`);
+    }
+  }
+})
 
 const apiClient = new ApiClient('http://localhost:3000');
 const web3Store = new Web3Store();

@@ -20,8 +20,19 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /sw\.js$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
+          }
+        ]
+      },
+      {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: /sw\.js$/,
         use: {
           loader: 'babel-loader'
         }
