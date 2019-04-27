@@ -6,7 +6,7 @@ class ApiClient {
 
   async get(url: string): ?Promise<Object> {
     try {
-      const res = await fetch(API_URL + url);
+      const res = await fetch(this.API_URL + url);
       return await res.json();
     } catch (e) {
       return undefined;
@@ -15,7 +15,7 @@ class ApiClient {
 
   async post(url: string, data: Object, headers?: Object): ?Promise<Object> {
     try {
-      const res = await fetch(API_URL + url, {
+      const res = await fetch(this.API_URL + url, {
         method: 'POST',
         headers: Object.assign(headers || {}, {
           'Content-Type': 'application/json'
@@ -30,7 +30,7 @@ class ApiClient {
 
   async put(url: string, data: Object, headers?: Object): ?Promise<Object> {
     try {
-      const res = await fetch(API_URL + url, {
+      const res = await fetch(this.API_URL + url, {
         method: 'PUT',
         headers: Object.assign(headers || {}, {
           'Content-Type': 'application/json'
@@ -45,7 +45,7 @@ class ApiClient {
 
   async delete(url: string, data?: Object, headers?: Object): ?Promise<Object> {
     try {
-      const res = await fetch(API_URL + url, {
+      const res = await fetch(this.API_URL + url, {
         method: 'DELETE',
         headers: Object.assign(headers || {}, {
           'Content-Type': 'application/json'
